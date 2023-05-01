@@ -29,7 +29,7 @@ export default function Board({
   return (
     <Canvas camera={{ position: [0, -40, 30] }} style={{ cursor: "crosshair" }}>
       {!fixed && <CameraController />}
-      <pointLight position={[10, 10, 10]} />
+      <pointLight position={[0, 100, 100]} />
       <ambientLight intensity={0.3} />
       <Pin
         size={[
