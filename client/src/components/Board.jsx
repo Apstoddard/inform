@@ -33,11 +33,11 @@ export default function Board({
       <ambientLight intensity={0.3} />
       <Pin
         size={[
-          length * size + (length * size - 1) * gap,
-          width * size + (width * size - 1) * gap,
+          length * size + (length * size - 1.5) * gap,
+          width * size + (width * size - 1.5) * gap,
           2,
         ]}
-        position={[-size / 2, -size / 2, -2]}
+        position={[0, 0, -2]}
       />
       {grid.map((row, rowIndex) =>
         row.map((box, colIndex) => (
@@ -46,10 +46,12 @@ export default function Board({
             position={[
               -(length * size + (length * size - 1) * gap) / 2 +
                 colIndex * size +
-                colIndex * size * gap,
+                colIndex * size * gap +
+                size / 2,
               -(width * size + (width * size - 1) * gap) / 2 +
                 rowIndex * size +
-                rowIndex * size * gap,
+                rowIndex * size * gap +
+                size / 2,
               0,
             ]}
             key={`${rowIndex} ${colIndex}`}
