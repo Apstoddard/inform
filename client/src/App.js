@@ -36,9 +36,9 @@ export default function App() {
     };
   }, []);
 
-  const length = 20;
-  const width = 20;
-  const size = 1.5;
+  const length = 30;
+  const width = 30;
+  const size = 1;
   const gap = 0.1;
 
   const wait = (duration) => {
