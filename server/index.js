@@ -7,6 +7,9 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 app.use(express.static(path.resolve(__dirname, "../client/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+});
 
 const httpServer = createServer(app);
 
@@ -89,12 +92,6 @@ io.on("connection", (socket) => {
     console.log("Disconnected");
     socket.disconnect();
   });
-});
-
-//httpServer.listen(PORT);
-
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
 });
 
 httpServer.listen(PORT, () => {

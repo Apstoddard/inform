@@ -1,4 +1,5 @@
 import Board from "./components/Board";
+import UserPanel from "./components/UserPanel";
 import { useEffect, useState } from "react";
 import { socket } from "./socket";
 import "./App.css";
@@ -6,6 +7,7 @@ import "./App.css";
 export default function App() {
   const [isConnected, setIsConnected] = useState(socket.connected);
   const [grid, setGrid] = useState();
+  const [persist, setPersist] = useState(false);
 
   useEffect(() => {
     const onConnect = () => {
@@ -41,16 +43,28 @@ export default function App() {
 
   const updateGrid = (row, col) => {
     socket.emit("grid-add", row, col);
-    setTimeout(() => {
-      socket.emit("grid-subtract", row, col);
-    }, 1000);
+    if (!persist) {
+      setTimeout(() => {
+        socket.emit("grid-subtract", row, col);
+      }, 1000);
+    }
+  };
+
+  const resetGrid = () => {
+    socket.emit("reset-grid");
   };
 
   return (
     <main className="main">
-      <section className="userPanel"></section>
+      <section className="userPanel">
+        <UserPanel
+          persist={persist}
+          setPersist={setPersist}
+          resetGrid={resetGrid}
+        />
+      </section>
       <section className="informPanel">
-        {grid ? (
+        {isConnected && grid ? (
           <Board
             grid={grid}
             updateGrid={updateGrid}
@@ -60,7 +74,7 @@ export default function App() {
             gap={gap}
           />
         ) : (
-          <span>Loading...</span>
+          <span className="informPanelLoading">Loading...</span>
         )}
       </section>
     </main>
