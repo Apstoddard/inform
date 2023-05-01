@@ -36,8 +36,8 @@ export default function App() {
     };
   }, []);
 
-  const length = 30;
-  const width = 30;
+  const length = 31;
+  const width = 31;
   const size = 1;
   const gap = 0.1;
 
@@ -59,6 +59,10 @@ export default function App() {
     socket.emit("reset-grid");
   };
 
+  const applyFuncToGrid = async (functionStr) => {
+    socket.emit("grid-func", functionStr);
+  };
+
   return (
     <main className="main">
       <section className="userPanel">
@@ -66,6 +70,7 @@ export default function App() {
           persist={persist}
           setPersist={setPersist}
           resetGrid={resetGrid}
+          applyFuncToGrid={applyFuncToGrid}
         />
       </section>
       <section className="informPanel">

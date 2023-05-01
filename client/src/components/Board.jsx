@@ -42,7 +42,7 @@ export default function Board({
       {grid.map((row, rowIndex) =>
         row.map((box, colIndex) => (
           <Pin
-            size={[size, size, (box < 6 ? box : 6) + 2]}
+            size={[size, size, (box < 16 ? (box >= 0 ? box : 0) : 16) + 2]}
             position={[
               -(length * size + (length * size - 1) * gap) / 2 +
                 colIndex * size +
