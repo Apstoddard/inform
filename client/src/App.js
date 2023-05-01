@@ -41,15 +41,17 @@ export default function App() {
   const size = 1.5;
   const gap = 0.1;
 
-  const updateGrid = (row, col) => {
+  const wait = (duration) => {
+    return new Promise((resolve) => {
+      setTimeout(resolve, duration);
+    });
+  };
+
+  const updateGrid = async (row, col) => {
     socket.emit("grid-add", row, col);
-    //const gridCopy = JSON.parse(JSON.stringify(grid));
-    //gridCopy[row][col] += 1;
-    //setGrid(gridCopy);
     if (!persist) {
-      setTimeout(() => {
-        socket.emit("grid-subtract", row, col);
-      }, 1000);
+      await wait(1000);
+      socket.emit("grid-subtract", row, col);
     }
   };
 
