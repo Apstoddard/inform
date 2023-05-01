@@ -43,6 +43,9 @@ export default function App() {
 
   const updateGrid = (row, col) => {
     socket.emit("grid-add", row, col);
+    const gridCopy = JSON.parse(JSON.stringify(grid));
+    gridCopy[row][col] += 1;
+    setGrid(gridCopy);
     if (!persist) {
       setTimeout(() => {
         socket.emit("grid-subtract", row, col);
