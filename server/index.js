@@ -91,7 +91,7 @@ io.on("connection", (socket) => {
   });
 });
 
-httpServer.listen(PORT);
+//httpServer.listen(PORT);
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
