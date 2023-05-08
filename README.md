@@ -1,0 +1,22 @@
+# inFORM Exhibit
+
+inFORM Exhibit is a web simulation for the MIT Museum inFORM exhibit
+
+## Installation
+
+```bash
+npm install
+```
+
+## Running
+
+Web server:
+```bash
+npm run start
+```
+
+Frontend:
+```bash
+cd client
+npm run start
+```
