@@ -23,8 +23,9 @@ function Pin({ size, position, hover }) {
     <mesh
       position={[x, y, height / 2 + z]}
       ref={ref}
-      onPointerMove={checkHoverFace}
-      onPointerLeave={resetCurrentFace}
+      onPointerOver={hover}
+      /*onPointerMove={checkHoverFace}
+      onPointerLeave={resetCurrentFace}*/
     >
       <boxGeometry args={[length, width, height]} />
       {[...Array(6)].map((_, index) => (
