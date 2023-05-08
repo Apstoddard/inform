@@ -64,7 +64,8 @@ const applyFuncToGrid = (functionStr) => {
   const f = limitedEvaluate(functionStr);
   for (let y = 0; y < size; y++) {
     for (let x = 0; x < size; x++) {
-      grid[y][x] = f(x - Math.floor(size / 2), y - Math.floor(size / 2));
+      result = f(x - Math.floor(size / 2), y - Math.floor(size / 2));
+      grid[y][x] = result >= 0 ? result : 0;
     }
   }
 };

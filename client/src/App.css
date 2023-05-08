@@ -35,8 +35,9 @@
   justify-content: center;
   align-items: center;
   gap: 128px;
-  padding: 128px 0px;
+  padding: 64px 64px;
   box-sizing: border-box;
+  position: relative;
 }
 
 .header {
@@ -109,4 +110,239 @@
   color: white;
   cursor: not-allowed;
   background-color: #c9c9c9;
+}
+
+/* Panel */
+
+.panel {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  padding: 64px 64px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.panelTitle {
+  font-size: 48px;
+}
+
+.panelLayout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+}
+
+.button {
+  outline: none;
+  box-sizing: border-box;
+  padding: 0px 24px;
+  font-size: 24px;
+  border: none;
+  background-color: #b6b6b6;
+  color: black;
+  cursor: pointer;
+  border-radius: 4px;
+  height: 72px;
+  width: 100%;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #868686;
+}
+
+.panelControls {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+
+.informTitle {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.panelControlsButton {
+  height: 32px;
+  outline: none;
+  box-sizing: border-box;
+  border: none;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  line-height: 32px;
+  font-size: 32px;
+}
+
+.largeText {
+  box-sizing: border-box;
+  padding: 48px 48px;
+  font-size: 24px;
+  background-color: #cdcdcd;
+  color: black;
+  border-radius: 4px;
+  height: fit-content;
+  width: 100%;
+  text-align: justify;
+}
+
+.rulesText {
+  font-size: 24px;
+  color: black;
+  height: fit-content;
+  width: 100%;
+  text-align: center;
+}
+
+.progressBarContainer {
+  position: relative;
+  width: 100%;
+  height: 48px;
+}
+
+.progressBar {
+  border: 1px solid #b6b6b6;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  height: 48px;
+  border-radius: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.progressBarProgress {
+  background-color: rgb(115, 191, 115);
+  width: 0%;
+  box-sizing: border-box;
+  height: 48px;
+  line-height: 48px;
+  border-radius: 24px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+}
+
+.progressBarText {
+  position: absolute;
+  z-index: 1;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  line-height: 48px;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+}
+
+.resetButton {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  cursor: pointer;
+  height: 32px;
+  line-height: 32px;
+  font-size: 16px;
+  background-color: #b6b6b6;
+  padding: 0px 16px;
+  border-radius: 4px;
+}
+
+/* graoh */
+
+.graphContainer {
+  position: relative;
+  width: 100%;
+  height: 48px;
+}
+
+.graphInput {
+  border: 1px solid #b6b6b6;
+  outline: none;
+  background-color: transparent;
+  padding: 0px 24px;
+  width: calc(100% - 96px);
+  box-sizing: border-box;
+  height: 48px;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  position: relative;
+  font-size: 20px;
+  color: black;
+}
+
+.graphSubmit {
+  outline: none;
+  background-color: rgb(115, 191, 115);
+  width: 96px;
+  box-sizing: border-box;
+  height: 48px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+  position: relative;
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.graphSubmit:disabled {
+  color: white;
+  cursor: not-allowed;
+  background-color: #c9c9c9;
+}
+
+.graphButton {
+  outline: none;
+  background-color: #b6b6b6;
+  padding: 0px 24px;
+  box-sizing: border-box;
+  height: 48px;
+  border-radius: 24px;
+  position: relative;
+  font-size: 16px;
+  color: black;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+}
+.graphButton:hover {
+  background-color: #868686;
+}
+
+.graphOptionsLayout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.graphOptions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  flex-wrap: wrap;
 }
