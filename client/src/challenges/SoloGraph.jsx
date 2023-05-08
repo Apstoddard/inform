@@ -48,10 +48,12 @@ export default function SoloGraph({ setState, grid, reset, applyFuncToGrid }) {
                 <span>
                   cos( <sup>1</sup>&frasl;<sub>2</sub> x ) + cos( <sup>1</sup>
                   &frasl;
-                  <sub>2</sub> y )
+                  <sub>2</sub> y ) + 2
                 </span>
               }
-              onClick={() => applyFuncToGrid(`f(x, y) = cos(0.5x) + cos(0.5y)`)}
+              onClick={() =>
+                applyFuncToGrid(`f(x, y) = cos(0.5x) + cos(0.5y) + 2`)
+              }
             />
             <GraphButton
               text={
