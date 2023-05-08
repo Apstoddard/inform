@@ -6,6 +6,8 @@ inFORM Exhibit is a web simulation for the MIT Museum inFORM exhibit
 
 ```bash
 npm install
+cd client
+npm install
 ```
 
 ## Running
