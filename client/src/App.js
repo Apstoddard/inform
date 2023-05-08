@@ -12,6 +12,13 @@ import RadicalAtomsPanel from "./panels/RadicalAtomsPanel";
 import HowToPanel from "./panels/HowToPanel";
 import Solo100Percent from "./challenges/Solo100Percent";
 import SoloGraph from "./challenges/SoloGraph";
+import CollabTogether from "./challenges/CollabTogether";
+import CollabBackAndForth from "./challenges/CollabBackAndForth";
+import CollabBattle from "./challenges/CollabBattle";
+import CollabRoundAndRound from "./challenges/CollabRoundAndRound";
+import SoloWaves from "./challenges/SoloWaves";
+import SoloUpUpAndAway from "./challenges/SoloUpUpAndAway";
+import SoloRoundAndRound from "./challenges/SoloRoundAndRound";
 
 export default function App() {
   const [isConnected, setIsConnected] = useState(socket.connected);
@@ -114,6 +121,44 @@ export default function App() {
             grid={grid}
             reset={resetGrid}
             applyFuncToGrid={applyFuncToGrid}
+          />
+        );
+      case "soloWaves":
+        return <SoloWaves setState={setState} grid={grid} reset={resetGrid} />;
+      case "soloUpUpAndAway":
+        return (
+          <SoloUpUpAndAway setState={setState} grid={grid} reset={resetGrid} />
+        );
+      case "soloRoundAndRound":
+        return (
+          <SoloRoundAndRound
+            setState={setState}
+            grid={grid}
+            reset={resetGrid}
+          />
+        );
+      case "collabTogether":
+        return (
+          <CollabTogether setState={setState} grid={grid} reset={resetGrid} />
+        );
+      case "collabBackAndForth":
+        return (
+          <CollabBackAndForth
+            setState={setState}
+            grid={grid}
+            reset={resetGrid}
+          />
+        );
+      case "collabBattle":
+        return (
+          <CollabBattle setState={setState} grid={grid} reset={resetGrid} />
+        );
+      case "collabRoundAndRound":
+        return (
+          <CollabRoundAndRound
+            setState={setState}
+            grid={grid}
+            reset={resetGrid}
           />
         );
       default:

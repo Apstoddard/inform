@@ -21,7 +21,7 @@ export default function SoloGraph({ setState, grid, reset, applyFuncToGrid }) {
         back={() => setState("soloMenu")}
       />
       <div className="panelTitle">
-        <b>Graph</b>
+        <b>Graph a Function</b>
       </div>
       <div className="panelLayout">
         <RulesText>Graph any function of x and y!</RulesText>

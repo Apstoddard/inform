@@ -4,10 +4,9 @@ import RulesText from "../components/RulesText";
 import ProgressBar from "../components/ProgressBar";
 import ChallengeControls from "../components/ChallengeControls";
 
-export default function Solo100Percent({ setState, grid, reset }) {
-  const gridSize = grid.flat().length;
-  const nonZeros = grid.flat().filter((block) => block !== 0).length;
-  const percent = (nonZeros / gridSize) * 100;
+export default function SoloUpUpAndAway({ setState, grid, reset }) {
+  const up = grid.flat().filter((block) => block > 1).length;
+  const percent = (up / 15) * 100;
   return (
     <div className="panel">
       <PanelControls
@@ -15,11 +14,14 @@ export default function Solo100Percent({ setState, grid, reset }) {
         back={() => setState("soloMenu")}
       />
       <div className="panelTitle">
-        <b>100 Percent</b>
+        <b>Up, Up, and Away</b>
       </div>
       <div className="panelLayout">
-        <RulesText>Move the ball to touch every block</RulesText>
-        <ProgressBar percent={Math.floor(percent)} />
+        <RulesText>How many blocks can you keep up at once?</RulesText>
+        <ProgressBar
+          number={up}
+          percent={Math.floor(percent > 100 ? 100 : percent)}
+        />
       </div>
       <ChallengeControls reset={reset} />
     </div>

@@ -1,13 +1,9 @@
 import React from "react";
 import PanelControls from "../components/PanelControls";
 import RulesText from "../components/RulesText";
-import ProgressBar from "../components/ProgressBar";
 import ChallengeControls from "../components/ChallengeControls";
 
-export default function Solo100Percent({ setState, grid, reset }) {
-  const gridSize = grid.flat().length;
-  const nonZeros = grid.flat().filter((block) => block !== 0).length;
-  const percent = (nonZeros / gridSize) * 100;
+export default function SoloRoundAndRound({ setState, grid, reset }) {
   return (
     <div className="panel">
       <PanelControls
@@ -15,11 +11,10 @@ export default function Solo100Percent({ setState, grid, reset }) {
         back={() => setState("soloMenu")}
       />
       <div className="panelTitle">
-        <b>100 Percent</b>
+        <b>Round and Round</b>
       </div>
       <div className="panelLayout">
-        <RulesText>Move the ball to touch every block</RulesText>
-        <ProgressBar percent={Math.floor(percent)} />
+        <RulesText>Try to make the ball move in a circle</RulesText>
       </div>
       <ChallengeControls reset={reset} />
     </div>

@@ -11,10 +11,16 @@ export default function CollabPanel({ setState }) {
       />
       <div className="panelTitle">Collaborative Challenges</div>
       <div className="panelLayout">
-        <Button text="Together" />
-        <Button text="Battle" />
-        <Button text="Round and Round" />
-        <Button text="Back and Forth" />
+        <Button text="Together" onClick={() => setState("collabTogether")} />
+        <Button text="Battle" onClick={() => setState("collabBattle")} />
+        <Button
+          text="Round and Round"
+          onClick={() => setState("collabRoundAndRound")}
+        />
+        <Button
+          text="Back and Forth"
+          onClick={() => setState("collabBackAndForth")}
+        />
       </div>
     </div>
   );
