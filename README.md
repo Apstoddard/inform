@@ -13,11 +13,13 @@ npm install
 ## Running
 
 Web server:
+
 ```bash
 npm run start
 ```
 
-Frontend:
+Frontend (in separate terminal):
+
 ```bash
 cd client
 npm run start
